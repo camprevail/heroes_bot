@@ -51,6 +51,9 @@ def getinfo(soup):
             buildsinfo[name]['recommend_color'] = (255, 177, 0)
         elif recommend == 'Not recommended':
             buildsinfo[name]['recommend_color'] = (255, 70, 70)
+        elif recommend == 'Beginner':
+            buildsinfo[name]['recommend_color'] = (0, 255, 255)
+
         buildsinfo[name]['levels'] = {}
         buildsinfo[name]['code'] = code
         for t in b.find_all('div', 'heroes_build_talent_tier'): # iterate through the levels
