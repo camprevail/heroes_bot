@@ -28,6 +28,8 @@ def imageGrid(buildsinfo):
         for lv_name, lv_info in build.get('levels').items():
             icon_bg = Image.open('assets/icon-bg.png')
             with Image.open(BytesIO(lv_info.get('image_data'))).convert('RGBA') as icon:
+                if icon.width != 128:
+                    icon = icon.resize((128, 128), resample=Image.LANCZOS)
                 icon = add_corners(icon, 9)  # round the corners of the image
                 icon_bg.paste(icon, (2, 2), mask=icon)
             icon = icon_bg.resize((icon_w, icon_h), resample=Image.LANCZOS)
