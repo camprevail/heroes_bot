@@ -1,3 +1,5 @@
+# Borrowed from the python discord bot and modified for this project. https://github.com/python-discord/bot
+
 import asyncio
 import logging
 import typing as t

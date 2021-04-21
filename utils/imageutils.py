@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
+from io import BytesIO
 
 
 def imageGrid(buildsinfo):

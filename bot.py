@@ -15,7 +15,7 @@ TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
 bot = commands.Bot(command_prefix='?')
 
-@bot.command()
+@bot.command(help="Type ?guide to see the list of heroes.")
 async def guide(ctx, character=None):
     with open('names.json', 'r') as f:
         names = json.load(f)
@@ -63,8 +63,8 @@ async def guide(ctx, character=None):
     # insert the image bytes into the buildsinfo dict
     for b in buildsinfo.values():
         for level in b.get('levels').values():
-            url = level['url']
-            level['image_data'] = image_data[url]
+            _url = level['url']
+            level['image_data'] = image_data[_url]
 
     # Pass the image list into the imageGrid function. It will return a list of images for each build.
     result = imageGrid(buildsinfo)
@@ -77,6 +77,7 @@ async def guide(ctx, character=None):
         buffer.seek(0)
         await ctx.send(f"`Build [{i}/{len(result)}]:  {code}`", file=discord.File(buffer, filename='unknown.png'))
         i += 1
+    await ctx.send(f'<{url}>')
     b = round(time.perf_counter(), 3) # finish time
     print(f'{len(result)} image(s) generated in {(str(round(b-a, 3)))} seconds for character {character}.')
     return
