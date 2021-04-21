@@ -51,6 +51,8 @@ async def guide(ctx, *, character=None):
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
     buildsinfo = getinfo(soup) # Dict of info for each build.
+    with open('test.json', 'w') as f:
+        json.dump(buildsinfo, f, indent=4)
 
     # Fetch the icons
     image_urls = []

@@ -19,7 +19,7 @@ async def fetch(conn, urls):
 def getinfo(soup):
     """
     Parses each build in the BeautifulSoup object into a dict.
-    Example:
+    Example buildsinfo json:
         {
             "Symbiote Build": {
                 "recommend": "Recommended",
@@ -32,7 +32,8 @@ def getinfo(soup):
                             "heroes_build_talent_tier_no",
                             "heroes_build_talent_tier_no",
                             "heroes_build_talent_tier_no"
-                        ]
+                        ],
+                        "url": "http://static.icy-veins.com/images/heroes/icons/large/storm_ui_icon_arthas_howlingblast.jpg"
                     },
                     "Level 4: {
     """
