@@ -16,7 +16,7 @@ TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 bot = commands.Bot(command_prefix='?')
 
 @bot.command(help="Type ?guide to see the list of heroes.")
-async def guide(ctx, character=None):
+async def guide(ctx, *, character=None):
     with open('names.json', 'r') as f:
         names = json.load(f)
 
@@ -41,7 +41,7 @@ async def guide(ctx, character=None):
             if char in val or char == key:
                 return key
 
-    url_character = namesearch(character.lower())
+    url_character = namesearch(''.join(character).lower())
     if not url_character:
         await ctx.send(f"`{character}` is not a valid character.")
         return
