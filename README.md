@@ -3,7 +3,7 @@ A discord.py command bot to render builds from icy veins (Heroes of the Storm) i
 
 ![Example pic](example.png)  
 
-##Setup
+## Setup
 Run `pip install -r requirements.txt`.
 
 Rename `.env-default` to `.env` and paste your discord bot token inside.
@@ -14,7 +14,7 @@ Make sure your bot has permissions to:
 - Add Reactions
 - Embed Links
 
-###Misc
+### Misc
 The default command is `?guide <hero name>`. This can be changed in `bot.py`.
 
 `bot.py` is the main script. Run it to start the bot.  
