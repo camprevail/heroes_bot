@@ -14,7 +14,7 @@ Make sure your bot has permissions to:
 - Add Reactions
 - Embed Links
 
-###Misc
+### Misc
 The default command is `?guide <hero name>`. This can be changed in `bot.py`.
 
 `bot.py` is the main script. Run it to start the bot.  
